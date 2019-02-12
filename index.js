@@ -42,6 +42,7 @@ server.get("/api/users", (req, res) => {
       res.json({ users });
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The users information could not be retrieved."
       });
@@ -62,6 +63,7 @@ server.get("/api/users/:id", (req, res) => {
       res.json({ users });
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The users information could not be retrieved."
       });
@@ -82,6 +84,7 @@ server.delete("/api/users/:id", (req, res) => {
       res.json({ success: `User ${id} removed.` });
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The user could not be removed"
       });
@@ -124,6 +127,7 @@ server.put("/api/users/:id", (req, res) => {
         });
     })
     .catch(error => {
+      console.log(error);
       res
         .status(500)
         .json({ error: "The user information could not be modified." });
